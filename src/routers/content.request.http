@@ -1,0 +1,32 @@
+@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsIm5hbWUiOiJXYWRlIFppZW1hbm4iLCJ1c2VybmFtZSI6IndhZGV6IiwiYmlvIjoiZmxlZGdsaW5nIGRldm90ZWUiLCJwYXNzd29yZCI6IjVlODg0ODk4ZGEyODA0NzE1MWQwZTU2ZjhkYzYyOTI3NzM2MDNkMGQ2YWFiYmRkNjJhMTFlZjcyMWQxNTQyZDgiLCJjcmVhdGVkIjoiMjAyNC0wOS0wNFQwODo1MzoxNC4wMTVaIiwiaWF0IjoxNzI1NDQwMzEzfQ.HIRrE1_gOKbFBiqWy8j7TAQtbVnnXlT9m5vsCf0ampw
+
+### Get All History
+GET http://localhost:8000/history
+Authorization: {{token}}
+
+### Create Post
+POST http://localhost:8000/content/posts
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+  "content":"test 1"
+}
+
+### Delete Post
+DELETE http://localhost:8000/content/posts/26
+Content-Type: application/json
+Authorization: {{token}}
+
+### Like Post
+POST http://localhost:8000/content/like/posts/28
+Content-Type: application/json
+Authorization: {{token}}
+
+### Unlike Post
+DELETE http://localhost:8000/content/unlike/posts/48
+Content-Type: application/json
+Authorization: {{token}}
+
+### Get like Post
+GET http://localhost:8000/content/like/posts/30

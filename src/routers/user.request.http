@@ -1,0 +1,63 @@
+@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsIm5hbWUiOiJXYWRlIFppZW1hbm4iLCJ1c2VybmFtZSI6IndhZGV6IiwiYmlvIjoiZmxlZGdsaW5nIGRldm90ZWUiLCJwYXNzd29yZCI6IjVlODg0ODk4ZGEyODA0NzE1MWQwZTU2ZjhkYzYyOTI3NzM2MDNkMGQ2YWFiYmRkNjJhMTFlZjcyMWQxNTQyZDgiLCJjcmVhdGVkIjoiMjAyNC0wOS0wNFQwODo1MzoxNC4wMTVaIiwiaWF0IjoxNzI1NDQwMzEzfQ.HIRrE1_gOKbFBiqWy8j7TAQtbVnnXlT9m5vsCf0ampw
+
+### Login
+POST http://localhost:8000/login
+Content-Type: application/json
+
+{
+  "username":"wadez",
+  "password":"password"
+}
+
+### verifyUser
+GET http://localhost:8000/verify
+Authorization: {{token}}
+
+### User by id
+GET http://localhost:8000/users/1
+Authorization: {{token}}
+
+### Follow
+POST http://localhost:8000/follow/9
+Content-Type: application/json
+Authorization: {{token}}
+
+### Unfollow
+DELETE  http://localhost:8000/unfollow/9
+Content-Type: application/json
+Authorization: {{token}}
+
+### getLikeByPostId
+GET http://localhost:8000/likes/21
+Content-Type: application/json
+Authorization: {{token}}
+
+### Unlike Post by istoryId
+DELETE http://localhost:8000/unlike/30
+Content-Type: application/json
+Authorization: {{token}}
+
+### getCommentByHistoryId
+GET http://localhost:8000/comments/46
+Content-Type: application/json
+Authorization: {{token}}
+
+### Delete Comment by HistoryId
+DELETE http://localhost:8000/comments/30
+Content-Type: application/json
+Authorization: {{token}}
+
+### getCommentLikeByHistoryId
+GET http://localhost:8000/like/comments/11
+Content-Type: application/json
+Authorization: {{token}}
+
+### getCommentLikeByHistoryId
+GET http://localhost:8000/follow/8
+Content-Type: application/json
+Authorization: {{token}}
+
+### Search
+GET http://localhost:8000/search?q=Wade
+Content-Type: application/json
+Authorization: {{token}}

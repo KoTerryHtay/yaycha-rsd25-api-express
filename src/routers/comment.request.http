@@ -1,0 +1,30 @@
+@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsIm5hbWUiOiJXYWRlIFppZW1hbm4iLCJ1c2VybmFtZSI6IndhZGV6IiwiYmlvIjoiZmxlZGdsaW5nIGRldm90ZWUiLCJwYXNzd29yZCI6IjVlODg0ODk4ZGEyODA0NzE1MWQwZTU2ZjhkYzYyOTI3NzM2MDNkMGQ2YWFiYmRkNjJhMTFlZjcyMWQxNTQyZDgiLCJjcmVhdGVkIjoiMjAyNC0wOS0wNFQwODo1MzoxNC4wMTVaIiwiaWF0IjoxNzI1NDQwMzEzfQ.HIRrE1_gOKbFBiqWy8j7TAQtbVnnXlT9m5vsCf0ampw
+
+### Get All History
+GET http://localhost:8000/history
+Authorization: {{token}}
+
+### Create Comment
+POST http://localhost:8000/content/comments
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+  "content":"comment test 1",
+  "postId":"27"
+}
+
+### Delete Comment
+DELETE  http://localhost:8000/content/comments/44
+Content-Type: application/json
+Authorization: {{token}}
+
+### Like Comment
+POST http://localhost:8000/content/like/comments/46
+Content-Type: application/json
+Authorization: {{token}}
+
+### Unlike Comment
+DELETE http://localhost:8000/content/unlike/comments/46
+Content-Type: application/json
+Authorization: {{token}}
